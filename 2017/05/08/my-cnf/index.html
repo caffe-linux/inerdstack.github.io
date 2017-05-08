@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>my.cnf | inerdstack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[mysql]default-character-set=utf8 CLIENTport                           = 3306socket                         = /var/lib/mysql/mysql.sock [mysqld]init_connect=’SET collation_connection = utf8_unicode_ci">
+<meta property="og:type" content="article">
+<meta property="og:title" content="my.cnf">
+<meta property="og:url" content="http://yoursite.com/2017/05/08/my-cnf/index.html">
+<meta property="og:site_name" content="inerdstack">
+<meta property="og:description" content="[mysql]default-character-set=utf8 CLIENTport                           = 3306socket                         = /var/lib/mysql/mysql.sock [mysqld]init_connect=’SET collation_connection = utf8_unicode_ci">
+<meta property="og:updated_time" content="2017-05-08T18:34:40.544Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="my.cnf">
+<meta name="twitter:description" content="[mysql]default-character-set=utf8 CLIENTport                           = 3306socket                         = /var/lib/mysql/mysql.sock [mysqld]init_connect=’SET collation_connection = utf8_unicode_ci">
+  
+    <link rel="alternate" href="/atom.xml" title="inerdstack" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">inerdstack</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">the stack of it nerds</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-my-cnf" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/08/my-cnf/" class="article-date">
+  <time datetime="2017-05-08T06:33:01.000Z" itemprop="datePublished">2017-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      my.cnf
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[mysql]<br>default-character-set=utf8</p>
+<h1 id="CLIENT"><a href="#CLIENT" class="headerlink" title="CLIENT"></a>CLIENT</h1><p>port                           = 3306<br>socket                         = /var/lib/mysql/mysql.sock</p>
+<p>[mysqld]<br>init_connect=’SET collation_connection = utf8_unicode_ci’<br>init_connect=’SET NAMES utf8’<br>character-set-server=utf8<br>collation-server=utf8_unicode_ci<br>skip-character-set-client-handshake</p>
+<h1 id="GENERAL"><a href="#GENERAL" class="headerlink" title="GENERAL"></a>GENERAL</h1><p>user                           = mysql<br>default-storage-engine         = InnoDB<br>socket                         = /var/lib/mysql/mysql.sock<br>pid-file                       = /data1/mysql/mysql.pid</p>
+<h1 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h1><p>key-buffer-size                = 32M<br>myisam-recover                 = FORCE,BACKUP</p>
+<h1 id="SAFETY"><a href="#SAFETY" class="headerlink" title="SAFETY"></a>SAFETY</h1><p>max-allowed-packet             = 16M<br>max-connect-errors             = 1000000<br>skip-name-resolve</p>
+<h1 id="DATA-STORAGE"><a href="#DATA-STORAGE" class="headerlink" title="DATA STORAGE"></a>DATA STORAGE</h1><p>datadir                        = /data1/mysql/</p>
+<h1 id="BINARY-LOGGING"><a href="#BINARY-LOGGING" class="headerlink" title="BINARY LOGGING"></a>BINARY LOGGING</h1><p>log-bin                        = /data1/mysql/mysql-bin<br>expire-logs-days               = 14<br>sync-binlog                    = 1</p>
+<h1 id="CACHES-AND-LIMITS"><a href="#CACHES-AND-LIMITS" class="headerlink" title="CACHES AND LIMITS"></a>CACHES AND LIMITS</h1><p>tmp-table-size                 = 32M<br>max-heap-table-size            = 32M<br>query-cache-type               = 0<br>query-cache-size               = 0<br>max-connections                = 500<br>thread-cache-size              = 50<br>open-files-limit               = 65535<br>table-definition-cache         = 2048<br>table-open-cache               = 4096</p>
+<h1 id="INNODB"><a href="#INNODB" class="headerlink" title="INNODB"></a>INNODB</h1><p>innodb-flush-method            = O_DIRECT<br>innodb-log-files-in-group      = 2<br>innodb-log-file-size           = 128M<br>innodb-flush-log-at-trx-commit = 1<br>innodb-file-per-table          = 1<br>innodb-buffer-pool-size        = 1G</p>
+<p>#innodb-buffer-pool-size        = 2G</p>
+<h1 id="LOGGING"><a href="#LOGGING" class="headerlink" title="LOGGING"></a>LOGGING</h1><p>log                   = /data1/mysql/mysql.log<br>log-error                      = /data1/mysql/mysql-error.log<br>log-queries-not-using-indexes  = 1<br>slow-query-log                 = 1<br>slow-query-log-file            = /data1/mysql/mysql-slow.log</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/05/08/my-cnf/" data-id="cj2ggvxes0000rd748ord8p01" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/08/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/08/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/08/my-cnf/">my.cnf</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 inerdstack<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
